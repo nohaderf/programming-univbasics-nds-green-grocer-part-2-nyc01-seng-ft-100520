@@ -6,6 +6,7 @@ require 'pry'
 # REMEMBER: This method **should** update cart
 
 def apply_coupons(cart, coupons)
+  binding.pry
   counter = 0
   coupons.each do |coupon|
     item_in_cart = find_item_by_name_in_collection(coupon[:item], cart) 
