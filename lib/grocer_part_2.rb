@@ -55,11 +55,11 @@ end
 
 
 
-def checkout(cart, coupons)
+def checkout(cart, coupon)
   consolidated_cart = consolidate_cart(cart)
-  couponed_cart = apply_coupons(consolidated_cart, coupons)
+  couponed_cart = apply_coupons(consolidated_cart, coupon)
   final_cart = apply_clearance(couponed_cart)
-  binding.pry
+  # binding.pry
   total = 0
   counter = 0
   while counter < final_cart.length
