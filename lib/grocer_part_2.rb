@@ -6,7 +6,6 @@ require 'pry'
 # REMEMBER: This method **should** update cart
 
 def apply_coupons(cart, coupons)
-  counter = 0
   coupons.each do |coupon|
     item_in_cart = find_item_by_name_in_collection(coupon[:item], cart) 
     cart_item_w_coupon = find_item_by_name_in_collection(coupon[:item] + " W/COUPON", cart)
@@ -23,8 +22,6 @@ def apply_coupons(cart, coupons)
         item_in_cart[:count] -= coupon[:num]
     end 
   end
-  counter += 1
-end
   cart
 end
 
