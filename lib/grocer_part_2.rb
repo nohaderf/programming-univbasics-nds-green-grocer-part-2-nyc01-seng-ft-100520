@@ -6,6 +6,7 @@ require 'pry'
 # REMEMBER: This method **should** update cart
 
 def apply_coupons(cart, coupons)
+    binding.pry
   coupons.each do |coupon|
     item_in_cart = find_item_by_name_in_collection(coupon[:item], cart) 
     cart_item_w_coupon = find_item_by_name_in_collection(coupon[:item] + " W/COUPON", cart)
@@ -59,7 +60,7 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   couponed_cart = apply_coupons(consolidated_cart, coupons)
   final_cart = apply_clearance(couponed_cart)
-  binding.pry
+
   total = 0
   counter = 0
   while counter < final_cart.length
