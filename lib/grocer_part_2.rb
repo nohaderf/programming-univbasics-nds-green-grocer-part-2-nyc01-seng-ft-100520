@@ -33,12 +33,7 @@ def apply_clearance(cart)
   counter = 0
   while counter < cart.length
     if cart[counter][:clearance] 
-      new_price= item_info[:price] - (item_info[:price] * 0.2)
-      new_price_array << {
-        :item => item_info[:item],
-        :price => new_price,
-        :clearance => item_info[:clearance],
-        :count => item_info[:count]
+      cart[counter][:price] = (cart[counter][:price] - cart[counter][price] * 0.2)
       }
     end
   end
