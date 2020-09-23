@@ -30,8 +30,8 @@ end
 # Returns a new Array where every unique item in the original is present but with its price reduced by 20% if its :clearance value is true
 
 def apply_clearance(cart)
-  new_price_array = []
-  cart.each do |item_info|
+  counter = 0
+  while counter |item_info|
     if item_info[:clearance] == true
       new_price= item_info[:price] - (item_info[:price] * 0.2)
       new_price_array << {
